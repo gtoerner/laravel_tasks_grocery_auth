@@ -53,5 +53,5 @@ Auth::routes();
 
 Route::get('/tasks', 'TaskController@index')->name('tasks');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/groceries', 'HomeController@index_groceries')->name('groceries');
+Route::get('/groceries', 'GroceryController@index')->name('groceries');
 
