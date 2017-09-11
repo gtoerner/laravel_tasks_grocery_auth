@@ -14,9 +14,7 @@
 use App\Task;
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome');});
 
     /**
      * Add New Task
@@ -28,10 +26,12 @@ Route::get('/', function () {
      */
     Route::delete('/task/{id}','TaskController@deleteTask')->name('tasks');
 
+Route::get('/grocery/additem', 'GroceryController@addItem');
+Route::post('grocery', 'GroceryController@store');
 
 Auth::routes();
 
 Route::get('/tasks', 'TaskController@index')->name('tasks');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/groceries', 'GroceryController@index')->name('groceries');
+Route::get('/grocery', 'GroceryController@index');
 
